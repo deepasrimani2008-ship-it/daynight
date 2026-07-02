@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day Night Toggle</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  font-family: Arial;
+}
+
+/* Day Mode */
+body.day {
+  background: #87ceeb;
+  color: black;
+}
+
+/* Night Mode */
+body.night {
+  background: #0b1d3a;
+  color: white;
+}
+
+/* Button */
+button {
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+body.day button {
+  background: black;
+  color: white;
+}
+
+body.night button {
+  background: white;
+  color: black;
+}
+</style>
+</head>
+
+<body class="day">
+
+<h1 id="text">☀️ Day Mode</h1>
+<button onclick="toggleMode()">Switch Mode</button>
+
+<script>
+function toggleMode() {
+  let body = document.body;
+  let text = document.getElementById("text");
+
+  body.classList.toggle("night");
+  body.classList.toggle("day");
+
+  if (body.classList.contains("night")) {
+    text.innerHTML = "🌙 Night Mode";
+  } else {
+    text.innerHTML = "☀️ Day Mode";
+  }
+}
+</script>
+
+</body>
+</html>
